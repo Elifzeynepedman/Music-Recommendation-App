@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "831469561318",
+    "project_id": "musicrecommendation-a57f0",
+    "storage_bucket": "musicrecommendation-a57f0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:831469561318:android:e122900d53076dfc9be227",
+        "android_client_info": {
+          "package_name": "bitirme.proje.musicrecommendation"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "831469561318-jfrj334tii4kte85pilnffc0c64f4235.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBwRxDtft5WYxzH2SCG-JCErdb5KperU-o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "831469561318-jfrj334tii4kte85pilnffc0c64f4235.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
