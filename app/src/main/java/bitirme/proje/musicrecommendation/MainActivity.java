@@ -10,36 +10,25 @@ import android.widget.TextView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-public class MainActivity extends AppCompatActivity {
-    private FirebaseAuth mAuth;
-    private TextView loginText;
+public class MainActivity extends AppCompatActivity implements  View.OnClickListener {
+
+    private TextView register;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mAuth= FirebaseAuth.getInstance();
-        loginText=findViewById(R.id.SignUpText);
+        register=(TextView) findViewById(R.id.register);
+        register.setOnClickListener(this);
 
-        loginText.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                logout();
-            }
-        });
     }
-@Override
-    public void onStart(){
-        super.onStart();
-        FirebaseUser currentUser=mAuth.getCurrentUser();
-        if(currentUser==null){
-            startActivity(new Intent(MainActivity.this,LoginActivity.class));
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()){
+            case R.id.register:
+                startActivity(new Intent(this,RegisterUser.class));
+                break;
         }
-
-    }
-
-    public void logout() {
-        FirebaseAuth.getInstance().signOut();
-        startActivity(new Intent(MainActivity.this, LoginActivity.class));
     }
 }
