@@ -6,6 +6,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Patterns;
+import android.view.KeyEvent;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -15,9 +18,12 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+
+import bitirme.proje.musicrecommendation.databinding.ActivityMainBinding;
 
 
 public class MainActivity extends AppCompatActivity implements  View.OnClickListener {
@@ -25,14 +31,17 @@ public class MainActivity extends AppCompatActivity implements  View.OnClickList
     private TextView register,forgotPassword;
     private EditText editEmail,editPassword;
     private Button signIn;
-
+    private BottomNavigationView bottomNav;
     private FirebaseAuth mAuth;
     private ProgressBar progressBar;
+
+    ActivityMainBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
 
         mAuth=FirebaseAuth.getInstance();
         register=(TextView) findViewById(R.id.register);
@@ -40,6 +49,17 @@ public class MainActivity extends AppCompatActivity implements  View.OnClickList
 
         signIn=(Button) findViewById(R.id.signIn);
         signIn.setOnClickListener(this);
+        signIn.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View view, int i, KeyEvent keyEvent) {
+                if(keyEvent.getAction()==keyEvent.ACTION_DOWN && i==KeyEvent.KEYCODE_ENTER){
+                    userLogin();
+                    return true;
+                }
+                return false;
+            }
+
+        });
 
         editEmail=(EditText)findViewById(R.id.email);
         editPassword=(EditText)findViewById(R.id.password);
@@ -47,7 +67,14 @@ public class MainActivity extends AppCompatActivity implements  View.OnClickList
 
         forgotPassword=(TextView) findViewById(R.id.forgotPassword);
         forgotPassword.setOnClickListener(this);
+
+
+
+
+
     }
+
+
 
     @Override
     public void onClick(View view) {
@@ -98,11 +125,14 @@ public class MainActivity extends AppCompatActivity implements  View.OnClickList
                      FirebaseUser user=FirebaseAuth.getInstance().getCurrentUser();
                      if(user.isEmailVerified()){
                          startActivity(new Intent(MainActivity.this,ProfileActivity.class));
+                         progressBar.setVisibility(View.GONE);
 
                      }
                      else {
                          user.sendEmailVerification();
                          Toast.makeText(MainActivity.this,"Check Your Email to verify your account",Toast.LENGTH_LONG).show();
+                         progressBar.setVisibility(View.GONE);
+
                      }
                  }else{
                      Toast.makeText(MainActivity.this,"Failed to Login, check your credentials",Toast.LENGTH_LONG).show();

@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Patterns;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ProgressBar;
@@ -16,12 +17,13 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class RegisterUser extends AppCompatActivity implements View.OnClickListener {
 
     private FirebaseAuth mAuth;
-    private TextView banner,registerUser;
+    private TextView banner,registerUser,redirectLogin;
     private EditText editTextName,editTextLastName,editTextAge,editTextEmail,editTextPassword;
     private ProgressBar progressBar;
 
@@ -37,6 +39,18 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
         registerUser=(TextView) findViewById(R.id.registerUser);
         registerUser.setOnClickListener(this);
 
+        registerUser.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View view, int i, KeyEvent keyEvent) {
+                if(keyEvent.getAction()==keyEvent.ACTION_DOWN && i==KeyEvent.KEYCODE_ENTER){
+                    registerUser();
+                    return true;
+                }
+                return false;
+            }
+        });
+        redirectLogin=(TextView) findViewById(R.id.redirectLogin);
+        redirectLogin.setOnClickListener(this);
         editTextName=(EditText) findViewById(R.id.name);
         editTextLastName=(EditText) findViewById(R.id.lastName);
 
@@ -45,6 +59,8 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
         editTextPassword =(EditText) findViewById(R.id.password);
 
         progressBar=(ProgressBar) findViewById(R.id.progressBar);
+
+
     }
 
     @Override
@@ -56,7 +72,12 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
             case R.id.registerUser:
                 registerUser();
                 break;
+            case R.id.redirectLogin:
+                startActivity(new Intent(this, MainActivity.class));
+                break;
         }
+
+
 
     }
 //Creates a new account
@@ -122,6 +143,8 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
                                 public void onComplete(@NonNull Task<Void> task) {
                                     if(task.isSuccessful()){
                                         Toast.makeText(RegisterUser.this,"Good",Toast.LENGTH_LONG).show();
+                                        startActivity(new Intent(RegisterUser.this,MainActivity.class));
+
                                     }
                                     else{
                                         Toast.makeText(RegisterUser.this,"Bad again",Toast.LENGTH_LONG).show();
