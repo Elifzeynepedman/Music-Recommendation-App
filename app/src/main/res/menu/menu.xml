@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <item android:title="Home"
-        android:icon="@drawable/homepage"
-        android:id="@+id/openhome"
+    <item
+        android:title="Profile"
+        android:icon="@drawable/profile"
+        android:id="@+id/profile"
+        app:showAsAction="ifRoom"
         />
-    <item android:title="Camera"
-        android:icon="@drawable/camera"
-        android:id="@+id/openCamera"/>
-    <item android:title="Library"
-        android:icon="@drawable/musiclibrary"
-        android:id="@+id/openLibrary"/>
+    <item android:title="Logout"
+        android:icon="@drawable/logout"
+        android:id="@+id/logout"
+        app:showAsAction="ifRoom"
+        />
+
 </menu>

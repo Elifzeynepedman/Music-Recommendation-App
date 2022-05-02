@@ -18,27 +18,40 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 public class CameraFragment extends AppCompatActivity {
 
     public static final int CAMERA_PERM_CODE = 101;
     public static final int CAMERA_REQUEST_CODE = 102;
-    ImageView selectedImage;
-    Button cameraBtn,galleryBtn;
+    Button cameraBtn,useImage;
     TextView goBack;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.camera_activity);
 
-        selectedImage=(ImageView)findViewById(R.id.displayImageView);
         cameraBtn=(Button)findViewById(R.id.cameraBtn);
         goBack=(TextView)findViewById(R.id.GoBack);
+        useImage=(Button) findViewById(R.id.useImg);
+
+
         cameraBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
                 askCameraPermissions();
+
+            }
+        });
+
+        useImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                replaceFragment(new mood_Recognition());
 
             }
         });
@@ -52,6 +65,13 @@ public class CameraFragment extends AppCompatActivity {
             }
         });
     }
+
+    private void replaceFragment(Fragment fragment) {
+        FragmentManager fragmentmanager=getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction=fragmentmanager.beginTransaction();
+        fragmentTransaction.replace(R.id.frameLayout,fragment);
+        fragmentTransaction.commit();
+   }
 
     private void askCameraPermissions() {
         if(ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA)!= PackageManager.PERMISSION_GRANTED){
@@ -86,13 +106,5 @@ public class CameraFragment extends AppCompatActivity {
 
     }
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == CAMERA_REQUEST_CODE) {
-            Bitmap image = (Bitmap) data.getExtras().get("data");
-            selectedImage.setImageBitmap(image);
 
-        }
-    }
 }
