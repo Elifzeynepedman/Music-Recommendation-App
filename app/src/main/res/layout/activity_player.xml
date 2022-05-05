@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#1F2833">
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/musicRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="701dp"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="-2dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="20dp" />
+
+    <LinearLayout
+        android:id="@+id/bottomBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_alignParentBottom="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/startTime"
+                android:layout_marginStart="10dp"
+                android:textSize="12sp"
+                android:text="00:00"
+                android:layout_centerVertical="true"
+                android:textColor="#FFFF"></TextView>
+        <SeekBar
+            android:layout_toEndOf="@+id/startTime"
+            android:layout_toStartOf="@+id/endTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/playSeekBar"
+            android:progressDrawable="@drawable/custom_seekbar"
+            android:thumb="@drawable/custom_thumb"
+            android:progress="50"
+            android:max="100"></SeekBar>
+            <TextView
+                android:id="@+id/endTime"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="10dp"
+                android:textColor="#FFFF"
+                android:textSize="12sp"
+                android:layout_alignParentEnd="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="00:00"></TextView>
+
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/previousBtn"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/round_back"
+                android:padding="10dp"
+                android:src="@drawable/prev_icon" />
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/playPauseCard"
+                android:layout_width="90dp"
+                android:layout_height="100dp"
+                android:outlineAmbientShadowColor="#66FCF1"
+                app:cardBackgroundColor="#66FCF1"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="10dp"
+                app:cardUseCompatPadding="true">
+
+                <ImageView
+                    android:id="@+id/playPauseImg"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/play_icon" />
+
+            </androidx.cardview.widget.CardView>
+
+            <ImageView
+                android:id="@+id/nextBtn"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="20dp"
+                android:background="@drawable/round_back"
+                android:padding="10dp"
+                android:src="@drawable/skip_next" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
+
+
+            <ImageView
+                android:id="@+id/HomeImg"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginStart="47dp"
+                app:srcCompat="@drawable/homepage" />
+
+            <ImageView
+                android:id="@+id/CamImg"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginStart="100dp"
+                app:srcCompat="@drawable/camera" />
+
+            <ImageView
+                android:id="@+id/LibImg"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginStart="100dp"
+                app:srcCompat="@drawable/musiclibrary" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp">
+
+
+            <TextView
+                android:id="@+id/HomepageDirect"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="44dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:text="Home"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:id="@+id/OpenCameraDirect"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="90dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:text="Camera"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:id="@+id/LibraryDirect"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="90dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:text="Library"
+                android:textColor="@color/white" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>
+
