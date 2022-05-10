@@ -8,15 +8,62 @@
     android:background="#1F2833">
 
 
-    <androidx.recyclerview.widget.RecyclerView
+    <RelativeLayout
         android:id="@+id/musicRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="701dp"
         android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
         android:layout_centerVertical="true"
         android:layout_marginStart="-2dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginBottom="20dp" />
+        android:layout_marginTop="-1dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="20dp" >
+
+        <ImageView
+            android:id="@+id/songImage"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="-2dp"
+            android:layout_marginTop="57dp"
+            android:paddingStart="30dp"
+            android:src="@drawable/dusktilldawn" />
+
+        <TextView
+            android:id="@+id/songName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="2dp"
+            android:layout_marginBottom="223dp"
+            android:paddingStart="15dp"
+            android:text="Dusk Till Dawn"
+            android:textColor="#ffff"
+            android:textSize="30dp" />
+
+        <TextView
+            android:id="@+id/songArtist"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="-30dp"
+            android:layout_marginBottom="190dp"
+            android:alpha=".8"
+            android:paddingStart="15dp"
+            android:text="Zayn Malik"
+            android:textColor="#ffff"
+            android:textSize="20dp" />
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/bottomBar"
