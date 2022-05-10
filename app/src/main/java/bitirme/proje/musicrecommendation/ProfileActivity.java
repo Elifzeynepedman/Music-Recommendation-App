@@ -108,4 +108,23 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
         }
 
     }
+
+    public void play_songasdasdsadasdas(View v){
+        MediaPlayer mediaPlayer=new MediaPlayer();
+        try {
+            mediaPlayer.setDataSource("https://firebasestorage.googleapis.com/v0/b/musicrecommendation-a57f0.appspot.com/o/Ava%20Max%20-%20Sweet%20but%20Psycho%20(Lyrics).mp3?alt=media&token=345d13c2-2560-41d6-b8da-0656b3e24a27");
+            mediaPlayer.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+                @Override
+                public void onPrepared(MediaPlayer mediaPlayer) {
+                    mediaPlayer.start();
+                }
+            });
+
+            mediaPlayer.prepare();
+
+        }catch (IOException e){
+            e.printStackTrace();
+        }
+
+    }
 }
