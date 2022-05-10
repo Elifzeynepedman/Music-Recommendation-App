@@ -3,7 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/Music-Recommendation-App/app/src/main/res/layout/activity_player.xml" value="0.275" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/Music-Recommendation-App/app/src/main/res/layout/activity_profile.xml" value="0.20425724637681159" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/Music-Recommendation-App/app/src/main/res/layout/camera_activity.xml" value="0.23958333333333334" />
       </map>
     </option>
   </component>
