@@ -1,5 +1,6 @@
 package bitirme.proje.musicrecommendation;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
@@ -14,6 +15,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -21,10 +27,17 @@ import java.util.ArrayList;
 public class ProfileActivity extends AppCompatActivity implements View.OnClickListener {
 
 
-    private ImageView HomeImg,CamImg,LibImg;
+    private ImageView HomeImg,CamImg,LibImg,songImage;
     private TextView HomeText,CamText,LibText;
     private TextView songArtist,songName;
+    DatabaseReference mref;
+    MediaPlayer mediaPlayer;
+    private CardView playPauseCard;
 
+    ArrayList<String> imageurls=new ArrayList<>();
+    ArrayList<String> songnames=new ArrayList<>();
+    ArrayList<String> songartists=new ArrayList<>();
+    ArrayList<String> songurls=new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,14 +50,36 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
         HomeText=(TextView) findViewById(R.id.HomepageDirect);
         CamText=(TextView) findViewById(R.id.OpenCameraDirect);
         LibText=(TextView) findViewById(R.id.LibraryDirect);
+        songArtist=(TextView) findViewById(R.id.songArtist);
+        songName=(TextView) findViewById(R.id.songName);
+        songImage=(ImageView) findViewById(R.id.songImage);
+        playPauseCard=(CardView) findViewById(R.id.playPauseCard);
 
         HomeImg.setOnClickListener(this);
         CamImg.setOnClickListener(this);
         LibImg.setOnClickListener(this);
-   ;
+        playPauseCard.setOnClickListener(this);
+        mref= FirebaseDatabase.getInstance().getReference();
 
 
+        mref.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for(DataSnapshot ds:snapshot.getChildren()){
+                    imageurls.add(ds.child("imageurl").getValue(String.class));
+                    songnames.add(ds.child("songname").getValue(String.class));
+                    songartists.add(ds.child("songartist").getValue(String.class));
+                }
+                for(int i=0;i<imageurls.size();i++){
 
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
     }
 
 
@@ -66,6 +101,8 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
                     FirebaseAuth.getInstance().signOut();
                     startActivity(new Intent(ProfileActivity.this,MainActivity.class));
                     return true;
+                case R.id.help:
+                    startActivity(new Intent(ProfileActivity.this,Help.class));
                 default:
                     return super.onOptionsItemSelected(item);
             }
@@ -82,49 +119,41 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
                 break;
             case R.id.LibraryDirect:
                 break;
-
+            case R.id.playPauseCard:
+                break;
 
         }
 
     }
 
 
+/*
+    public void init(int currentItem) {
 
-    public void play_song(View v){
-        MediaPlayer mediaPlayer=new MediaPlayer();
         try {
-            mediaPlayer.setDataSource("https://firebasestorage.googleapis.com/v0/b/musicrecommendation-a57f0.appspot.com/o/Ava%20Max%20-%20Sweet%20but%20Psycho%20(Lyrics).mp3?alt=media&token=345d13c2-2560-41d6-b8da-0656b3e24a27");
+            if(mediaPlayer.isPlaying())
+                mediaPlayer.reset();
+        }catch (Exception e){
+
+        }
+
+       songName.setText(songnames.get(currentItem));
+        songArtist.setText(songartists.get(currentItem));
+
+        try {
+            mediaPlayer=new MediaPlayer();
+           mediaPlayer.setDataSource(songurls.get(currentItem));
+            mediaPlayer.prepareAsync();
             mediaPlayer.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
                 @Override
                 public void onPrepared(MediaPlayer mediaPlayer) {
                     mediaPlayer.start();
                 }
             });
-
-            mediaPlayer.prepare();
-
-        }catch (IOException e){
+        }catch (Exception e){
             e.printStackTrace();
         }
 
-    }
+    }*/
 
-    public void play_songasdasdsadasdas(View v){
-        MediaPlayer mediaPlayer=new MediaPlayer();
-        try {
-            mediaPlayer.setDataSource("https://firebasestorage.googleapis.com/v0/b/musicrecommendation-a57f0.appspot.com/o/Ava%20Max%20-%20Sweet%20but%20Psycho%20(Lyrics).mp3?alt=media&token=345d13c2-2560-41d6-b8da-0656b3e24a27");
-            mediaPlayer.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
-                @Override
-                public void onPrepared(MediaPlayer mediaPlayer) {
-                    mediaPlayer.start();
-                }
-            });
-
-            mediaPlayer.prepare();
-
-        }catch (IOException e){
-            e.printStackTrace();
-        }
-
-    }
 }

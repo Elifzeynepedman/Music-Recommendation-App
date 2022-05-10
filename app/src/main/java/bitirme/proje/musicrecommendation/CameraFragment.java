@@ -7,6 +7,9 @@ import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -22,12 +25,40 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 public class CameraFragment extends AppCompatActivity {
 
     public static final int CAMERA_PERM_CODE = 101;
     public static final int CAMERA_REQUEST_CODE = 102;
     Button cameraBtn,useImage;
     TextView goBack;
+    ImageView cameraImg;
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        MenuInflater inflater=getMenuInflater();
+        inflater.inflate(R.menu.menu,menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch(item.getItemId()){
+            case R.id.profile:
+                startActivity(new Intent(CameraFragment.this,SettingsProfile.class));
+                return true;
+            case R.id.logout:
+                FirebaseAuth.getInstance().signOut();
+                startActivity(new Intent(CameraFragment.this,MainActivity.class));
+                return true;
+            case R.id.help:
+                startActivity(new Intent(CameraFragment.this,Help.class));
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,12 +67,12 @@ public class CameraFragment extends AppCompatActivity {
         cameraBtn=(Button)findViewById(R.id.cameraBtn);
         goBack=(TextView)findViewById(R.id.GoBack);
         useImage=(Button) findViewById(R.id.useImg);
-
+        cameraImg=(ImageView) findViewById(R.id.cameraImg);
 
         cameraBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+// Asks the user if the program can use their camera
                 askCameraPermissions();
 
             }
@@ -50,7 +81,7 @@ public class CameraFragment extends AppCompatActivity {
         useImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+//Replaces the fragment with camera
                 replaceFragment(new mood_Recognition());
 
             }
@@ -59,13 +90,13 @@ public class CameraFragment extends AppCompatActivity {
         goBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+// Goes back to the home page
                 startActivity(new Intent(CameraFragment.this,ProfileActivity.class));
 
             }
         });
     }
-
+//Function to replace the fragment for camera
     private void replaceFragment(Fragment fragment) {
         FragmentManager fragmentmanager=getSupportFragmentManager();
         FragmentTransaction fragmentTransaction=fragmentmanager.beginTransaction();
@@ -99,6 +130,14 @@ public class CameraFragment extends AppCompatActivity {
 
     }
 
+    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == CAMERA_REQUEST_CODE) {
+            Bitmap bitmap = (Bitmap) data.getExtras().get("data");
+            cameraImg.setImageBitmap(bitmap);
+
+        }
+    }
     private void openCamera() {
         Intent camera= new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         startActivityForResult(camera, CAMERA_REQUEST_CODE);

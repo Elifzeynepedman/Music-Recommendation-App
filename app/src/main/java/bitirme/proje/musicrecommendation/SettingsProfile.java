@@ -5,6 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -28,6 +31,31 @@ public class SettingsProfile extends AppCompatActivity implements View.OnClickLi
     private String userID;
 
     public SettingsProfile() {
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        MenuInflater inflater=getMenuInflater();
+        inflater.inflate(R.menu.menu,menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch(item.getItemId()){
+            case R.id.profile:
+                startActivity(new Intent(SettingsProfile.this,SettingsProfile.class));
+                return true;
+            case R.id.logout:
+                FirebaseAuth.getInstance().signOut();
+                startActivity(new Intent(SettingsProfile.this,MainActivity.class));
+                return true;
+            case R.id.help:
+                startActivity(new Intent(SettingsProfile.this,Help.class));
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 
     @Override

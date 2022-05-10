@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 
 public class mood_Recognition extends Fragment {
     View view;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
