@@ -158,7 +158,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
                 startActivity(new Intent(this, CameraFragment.class));
                 break;
             case R.id.LibImg:
-                startActivity(new Intent(this, Library.class));
+                startActivity(new Intent(this, Library.class)); //tavuk
                 break;
         }
     }
