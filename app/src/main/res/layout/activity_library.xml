@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#1F2833">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/happyPlaylistImage"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="30dp"
+            android:adjustViewBounds="true"
+            android:scaleType="centerInside"
+            android:src="@drawable/happy" />
+
+        <TextView
+            android:id="@+id/happyPlaylist"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/happyPlaylistImage"
+            android:orientation="vertical"
+            android:paddingLeft="15dp"
+            android:paddingTop="45dp"
+            android:text="Happy Playlist"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+
+        <ImageView
+            android:id="@+id/sadPlaylistImage"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="180dp"
+            android:adjustViewBounds="true"
+            android:scaleType="centerInside"
+            android:src="@drawable/sad_bear" />
+
+        <TextView
+            android:id="@+id/nameOfSong2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/happyPlaylist"
+            android:layout_toRightOf="@id/sadPlaylistImage"
+            android:orientation="vertical"
+            android:paddingLeft="15dp"
+            android:paddingTop="123dp"
+            android:text="Sad Playlist"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+
+
+        <ImageView
+            android:id="@+id/angryPlaylistImage"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="330dp"
+            android:adjustViewBounds="true"
+            android:scaleType="centerInside"
+            android:src="@drawable/angry_bear" />
+        <TextView
+            android:id="@+id/nameOfSong3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="15dp"
+            android:paddingTop="120dp"
+            android:text="Angry Playlist"
+            android:layout_toRightOf="@id/angryPlaylistImage"
+            android:textColor="@color/white"
+            android:orientation="vertical"
+            android:textSize="20sp"
+            android:layout_below="@+id/nameOfSong2"/>
+
+
+        <ImageView
+            android:id="@+id/neutralPlaylistImage"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="480dp"
+            android:adjustViewBounds="true"
+            android:scaleType="centerInside"
+            android:src="@drawable/neutral_bear" />
+        <TextView
+            android:id="@+id/nameOfSong4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/nameOfSong3"
+            android:orientation="vertical"
+            android:layout_toRightOf="@id/neutralPlaylistImage"
+            android:paddingLeft="15dp"
+            android:paddingTop="127dp"
+            android:text="Neutral Playlist"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/bottomBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_alignParentBottom="true">
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
+
+
+            <ImageView
+                android:id="@+id/HomeImg"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginStart="47dp"
+                app:srcCompat="@drawable/homepage" />
+
+            <ImageView
+                android:id="@+id/CamImg"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginStart="100dp"
+                app:srcCompat="@drawable/camera" />
+
+            <ImageView
+                android:id="@+id/LibImg"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginStart="100dp"
+                app:srcCompat="@drawable/musiclibrary" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp">
+
+
+            <TextView
+                android:id="@+id/HomepageDirect"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="44dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:text="Home"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:id="@+id/OpenCameraDirect"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="90dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:text="Camera"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:id="@+id/LibraryDirect"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="90dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:text="Library"
+                android:textColor="@color/white" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>
+
