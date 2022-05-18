@@ -18,7 +18,9 @@
         <activity android:name=".ProfileActivity" />
         <activity android:name=".RegisterUser" />
         <activity android:name=".CameraFragment" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".Library" />
+        <activity android:name=".MainActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
