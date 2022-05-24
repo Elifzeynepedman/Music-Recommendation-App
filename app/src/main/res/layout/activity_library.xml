@@ -23,9 +23,75 @@
             android:src="@drawable/happy" />
 
         <TextView
+            android:id="@+id/sadPlaylist"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/happyPlaylist"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="0dp"
+            android:layout_toRightOf="@id/sadPlaylistImage"
+            android:orientation="vertical"
+            android:paddingLeft="15dp"
+            android:paddingTop="123dp"
+            android:text="Sad Playlist"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+        <ImageView
+            android:id="@+id/angryPlaylistImage"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="330dp"
+            android:adjustViewBounds="true"
+            android:scaleType="centerInside"
+            android:src="@drawable/angry_bear" />
+
+        <TextView
+            android:id="@+id/angryPlaylist"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/sadPlaylist"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="0dp"
+            android:layout_toRightOf="@id/angryPlaylistImage"
+            android:orientation="vertical"
+            android:paddingLeft="15dp"
+            android:paddingTop="120dp"
+            android:text="Angry Playlist"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+        <ImageView
+            android:id="@+id/neutralPlaylistImage"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="480dp"
+            android:adjustViewBounds="true"
+            android:scaleType="centerInside"
+            android:src="@drawable/neutral_bear" />
+
+        <TextView
+            android:id="@+id/neutralPlaylist"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/angryPlaylist"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="0dp"
+            android:layout_toRightOf="@id/neutralPlaylistImage"
+            android:orientation="vertical"
+            android:paddingLeft="15dp"
+            android:paddingTop="127dp"
+            android:text="Neutral Playlist"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+        <TextView
             android:id="@+id/happyPlaylist"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="0dp"
             android:layout_toRightOf="@id/happyPlaylistImage"
             android:orientation="vertical"
             android:paddingLeft="15dp"
@@ -33,7 +99,6 @@
             android:text="Happy Playlist"
             android:textColor="@color/white"
             android:textSize="20sp" />
-
 
         <ImageView
             android:id="@+id/sadPlaylistImage"
@@ -45,65 +110,6 @@
             android:scaleType="centerInside"
             android:src="@drawable/sad_bear" />
 
-        <TextView
-            android:id="@+id/nameOfSong2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/happyPlaylist"
-            android:layout_toRightOf="@id/sadPlaylistImage"
-            android:orientation="vertical"
-            android:paddingLeft="15dp"
-            android:paddingTop="123dp"
-            android:text="Sad Playlist"
-            android:textColor="@color/white"
-            android:textSize="20sp" />
-
-
-
-        <ImageView
-            android:id="@+id/angryPlaylistImage"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="330dp"
-            android:adjustViewBounds="true"
-            android:scaleType="centerInside"
-            android:src="@drawable/angry_bear" />
-        <TextView
-            android:id="@+id/nameOfSong3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingLeft="15dp"
-            android:paddingTop="120dp"
-            android:text="Angry Playlist"
-            android:layout_toRightOf="@id/angryPlaylistImage"
-            android:textColor="@color/white"
-            android:orientation="vertical"
-            android:textSize="20sp"
-            android:layout_below="@+id/nameOfSong2"/>
-
-
-        <ImageView
-            android:id="@+id/neutralPlaylistImage"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="480dp"
-            android:adjustViewBounds="true"
-            android:scaleType="centerInside"
-            android:src="@drawable/neutral_bear" />
-        <TextView
-            android:id="@+id/nameOfSong4"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/nameOfSong3"
-            android:orientation="vertical"
-            android:layout_toRightOf="@id/neutralPlaylistImage"
-            android:paddingLeft="15dp"
-            android:paddingTop="127dp"
-            android:text="Neutral Playlist"
-            android:textColor="@color/white"
-            android:textSize="20sp" />
 
     </RelativeLayout>
 

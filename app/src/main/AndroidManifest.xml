@@ -12,16 +12,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MusicRecommendation">
-        <activity android:name=".ContactUs"></activity>
-        <activity android:name=".Help" />
+        <activity android:name=".Help"></activity>
         <activity android:name=".SettingsProfile" />
         <activity android:name=".ForgotPassword" />
         <activity android:name=".ProfileActivity" />
         <activity android:name=".RegisterUser" />
         <activity android:name=".CameraFragment" />
         <activity android:name=".Library" />
-        <activity
-            android:name=".MainActivity"
+        <activity android:name=".Playlist" />
+        <activity android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

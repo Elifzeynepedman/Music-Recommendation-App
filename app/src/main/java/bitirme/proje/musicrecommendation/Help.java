@@ -72,6 +72,7 @@ public class Help extends AppCompatActivity implements View.OnClickListener {
                 startActivity(new Intent(this, CameraFragment.class));
                 break;
             case R.id.LibraryDirect:
+                startActivity(new Intent(this, Library.class));
                 break;
             case R.id.ContactUs:
                 startActivity(new Intent(this, ContactUs.class));

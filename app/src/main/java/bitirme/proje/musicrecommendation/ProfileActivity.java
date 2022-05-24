@@ -164,7 +164,7 @@ ProfileActivity extends AppCompatActivity implements View.OnClickListener {
                 startActivity(new Intent(this, CameraFragment.class));
                 break;
             case R.id.LibImg:
-                startActivity(new Intent(this, Library.class)); //tavuk
+                startActivity(new Intent(this, Library.class));
                 break;
         }
     }
@@ -184,6 +184,8 @@ ProfileActivity extends AppCompatActivity implements View.OnClickListener {
     };
 
 
+    String songDuration;
+
     public String milliSecondsToTimer(long milliseconds){               //Converts milliseconds into mm:ss format
         String finalTimerString = "";
         String secondsString = "";
@@ -196,16 +198,20 @@ ProfileActivity extends AppCompatActivity implements View.OnClickListener {
             secondsString = "" + seconds;
         }
         finalTimerString = finalTimerString + minutes + ":" + secondsString;
+        songDuration = finalTimerString;
         return finalTimerString;
     }
 
-    int songNo = 3;
+    public String getSongduration(){
+        return songDuration;
+    }
 
+    int songNo = 3;
     public void play_song(boolean prev, boolean next){
         try {
 
             Random songRandomizer = new Random();
-            int randomNumber = songRandomizer.nextInt(5);
+            //int randomNumber = songRandomizer.nextInt(5);
             if(prev){
                 //randomNumber--;
                 songNo--;
@@ -213,11 +219,10 @@ ProfileActivity extends AppCompatActivity implements View.OnClickListener {
                 //randomNumber++;
                 songNo++;
             }
-            setSongInformation(songNo);           //SIKINTI YARATABİLİR
+            setSongInformation(songNo);
 
 
-            String chosenSong = song.getSongURL(songNo);           //SIKINTI YARATABİLİR
-            //String chosenSong = "https://firebasestorage.googleapis.com/v0/b/musicrecommendation-a57f0.appspot.com/o/Happy%20Songs%2FCAN'T%20STOP%20THE%20FEELING!%20-%20Justin%20Timberlake%20(Lyrics)%20.mp3?alt=media&token=7240c4cc-152d-4c23-85eb-157eb67a1628";
+            String chosenSong = song.getSongURL(songNo);
             mediaPlayer.setDataSource(chosenSong);
             mediaPlayer.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
                 @Override

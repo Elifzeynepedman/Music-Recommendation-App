@@ -120,6 +120,7 @@ public class SettingsProfile extends AppCompatActivity implements View.OnClickLi
                 startActivity(new Intent(this, CameraFragment.class));
                 break;
             case R.id.LibraryDirect:
+                startActivity(new Intent(this, Library.class));
                 break;
 
         }

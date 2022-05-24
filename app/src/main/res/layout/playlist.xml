@@ -7,361 +7,560 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="#1F2833">
 
+    <TextView
+        android:id="@+id/nameofPlaylist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="10dp"
+        android:background="#1F2833"
+        android:text="playlistName"
+        android:textColor="#66FCF1"
+        android:textSize="28sp"
+        android:textStyle="bold" />
 
-    <RelativeLayout
+    <TextView
+        android:id="@+id/songNameArtistText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="65dp"
+        android:layout_marginTop="65dp"
+        android:layout_marginBottom="10dp"
+        android:background="#1F2833"
+        android:text="Song Name/Artist"
+        android:textColor="#66FCF1"
+        android:textSize="14sp"
+        android:textStyle="bold"/>
+    <TextView
+        android:id="@+id/duration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="320dp"
+        android:layout_marginTop="65dp"
+        android:text="Duration"
+        android:textColor="#66FCF1"
+        android:textSize="14sp"
+        android:textStyle="bold"/>
+
+    <ImageView
+        android:id="@+id/startPlaylist"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="62dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:adjustViewBounds="true"
+        android:scaleType="centerInside"
+        android:src="@drawable/play_icon" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/songNameArtistText"
+        android:id="@+id/scrollLinearLayout"
+        android:layout_above="@id/bottomBar">
+
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <ImageView
-            android:id="@+id/songImage1"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="50dp"
-            android:adjustViewBounds="true"
-            android:scaleType="centerInside"
-            android:src="@drawable/sad_bear" />
 
-        <TextView
-            android:id="@+id/nameOfSong1"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/songImage1"
-            android:orientation="vertical"
-            android:paddingLeft="10dp"
-            android:paddingTop="50dp"
-            android:text="Can't Stop The Feeling"
-            android:textColor="@color/white"
-            android:textSize="18sp" />
-        <TextView
-            android:id="@+id/nameOfArtist1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingLeft="20dp"
-            android:text="Justin Timberlake"
-            android:textColor="@color/white"
-            android:textSize="15sp"
-            android:orientation="vertical"
-            android:layout_below="@+id/nameOfSong1"
-            android:layout_toRightOf="@id/songImage1" />
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/songImage1"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:adjustViewBounds="true"
+                android:scaleType="centerInside"
+                android:src="@drawable/sad_bear" />
+
+            <ImageView
+                android:id="@+id/songImage2"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:layout_below="@+id/songImage1"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="18dp"
+                android:adjustViewBounds="true"
+                android:scaleType="centerInside"
+                android:src="@drawable/sad_bear" />
+
+            <ImageView
+                android:id="@+id/songImage3"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:layout_below="@+id/songImage2"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="18dp"
+                android:adjustViewBounds="true"
+                android:scaleType="centerInside"
+                android:src="@drawable/sad_bear" />
+
+            <ImageView
+                android:id="@+id/songImage4"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:layout_below="@+id/songImage3"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="18dp"
+                android:adjustViewBounds="true"
+                android:scaleType="centerInside"
+                android:src="@drawable/sad_bear" />
+
+            <ImageView
+                android:id="@+id/songImage5"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:layout_below="@+id/songImage4"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="18dp"
+                android:adjustViewBounds="true"
+                android:scaleType="centerInside"
+                android:src="@drawable/sad_bear" />
+
+            <ImageView
+                android:id="@+id/songImage6"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:layout_below="@+id/songImage5"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="18dp"
+                android:adjustViewBounds="true"
+                android:scaleType="centerInside"
+                android:src="@drawable/sad_bear" />
+
+            <ImageView
+                android:id="@+id/songImage7"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:layout_below="@+id/songImage6"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="18dp"
+                android:adjustViewBounds="true"
+                android:scaleType="centerInside"
+                android:src="@drawable/sad_bear" />
+
+            <ImageView
+                android:id="@+id/songImage8"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:layout_below="@+id/songImage7"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="18dp"
+                android:adjustViewBounds="true"
+                android:scaleType="centerInside"
+                android:src="@drawable/sad_bear" />
+
+            <ImageView
+                android:id="@+id/songImage9"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:layout_below="@+id/songImage8"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="18dp"
+                android:adjustViewBounds="true"
+                android:scaleType="centerInside"
+                android:src="@drawable/sad_bear" />
+
+            <ImageView
+                android:id="@+id/songImage10"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:layout_below="@+id/songImage9"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="18dp"
+                android:adjustViewBounds="true"
+                android:scaleType="centerInside"
+                android:src="@drawable/sad_bear" />
+
+            <TextView
+                android:id="@+id/nameOfSong1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_toRightOf="@id/songImage1"
+                android:orientation="vertical"
+                android:paddingLeft="10dp"
+                android:text="nameOfSong1"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/duration1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="320dp"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical"
+                android:text="4:20"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
 
 
-        <ImageView
-            android:id="@+id/songImage2"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="112dp"
-            android:adjustViewBounds="true"
-            android:scaleType="centerInside"
-            android:src="@drawable/sad_bear" />
-        <TextView
-            android:id="@+id/nameOfSong2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingLeft="10dp"
-            android:paddingTop="18dp"
-            android:text="Can't Stop The Feeling"
-            android:layout_toRightOf="@id/songImage2"
-            android:textColor="@color/white"
-            android:orientation="vertical"
-            android:textSize="18sp"
-            android:layout_below="@+id/nameOfArtist1"/>
-        <TextView
-            android:id="@+id/nameOfArtist2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingLeft="20dp"
-            android:text="Justin Timberlake"
-            android:layout_toRightOf="@id/songImage2"
-            android:textColor="@color/white"
-            android:textSize="15sp"
-            android:orientation="vertical"
-            android:layout_below="@+id/nameOfSong2"
-            />
+            <TextView
+                android:id="@+id/nameOfArtist1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/nameOfSong1"
+                android:layout_toRightOf="@id/songImage1"
+                android:orientation="vertical"
+                android:paddingLeft="20dp"
+                android:text="nameOfArtist1"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/nameOfSong2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/nameOfArtist1"
+                android:layout_marginTop="18dp"
+                android:layout_toRightOf="@id/songImage2"
+                android:orientation="vertical"
+                android:paddingLeft="10dp"
+                android:text="nameOfSong2"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/duration2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/duration1"
+                android:layout_marginTop="38dp"
+                android:orientation="vertical"
+                android:layout_marginLeft="320dp"
+                android:text="4:20"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/nameOfArtist2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/nameOfSong2"
+                android:layout_toRightOf="@id/songImage2"
+                android:orientation="vertical"
+                android:paddingLeft="20dp"
+                android:text="nameOfArtist2"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
 
 
+            <TextView
+                android:id="@+id/nameOfSong3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:layout_marginTop="18dp"
+                android:text="nameOfSong3"
+                android:layout_toRightOf="@id/songImage3"
+                android:textColor="@color/white"
+                android:orientation="vertical"
+                android:textSize="18sp"
+                android:layout_below="@+id/nameOfArtist2"/>
 
-        <ImageView
-            android:id="@+id/songImage3"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="174dp"
-            android:adjustViewBounds="true"
-            android:scaleType="centerInside"
-            android:src="@drawable/sad_bear" />
-        <TextView
-            android:id="@+id/nameOfSong3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingLeft="10dp"
-            android:paddingTop="18dp"
-            android:text="Can't Stop The Feeling"
-            android:layout_toRightOf="@id/songImage3"
-            android:textColor="@color/white"
-            android:orientation="vertical"
-            android:textSize="18sp"
-            android:layout_below="@+id/nameOfArtist2"/>
-        <TextView
-            android:id="@+id/nameOfArtist3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingLeft="18dp"
-            android:layout_toRightOf="@id/songImage3"
-            android:text="Justin Timberlake"
-            android:textColor="@color/white"
-            android:textSize="15sp"
-            android:orientation="vertical"
-            android:layout_below="@+id/nameOfSong3" />
+            <TextView
+                android:id="@+id/duration3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/duration2"
+                android:layout_marginTop="38dp"
+                android:orientation="vertical"
+                android:layout_marginLeft="320dp"
+                android:text="4:20"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
 
 
-
-        <ImageView
-            android:id="@+id/songImage4"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="236dp"
-            android:adjustViewBounds="true"
-            android:scaleType="centerInside"
-            android:src="@drawable/sad_bear" />
-        <TextView
-            android:id="@+id/nameOfSong4"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/nameOfArtist3"
-            android:orientation="vertical"
-            android:layout_toRightOf="@id/songImage4"
-            android:paddingLeft="10dp"
-            android:paddingTop="18dp"
-            android:text="Can't Stop The Feeling"
-            android:textColor="@color/white"
-            android:textSize="18sp" />
-        <TextView
-            android:id="@+id/nameOfArtist4"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingLeft="20dp"
-            android:text="Justin Timberlake"
-            android:layout_toRightOf="@id/songImage4"
-            android:textColor="@color/white"
-            android:textSize="15sp"
-            android:orientation="vertical"
-            android:layout_below="@+id/nameOfSong4" />
+            <TextView
+                android:id="@+id/nameOfArtist3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/nameOfSong3"
+                android:layout_toRightOf="@id/songImage3"
+                android:orientation="vertical"
+                android:paddingLeft="20dp"
+                android:text="nameOfArtist3"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
 
 
+            <TextView
+                android:id="@+id/nameOfSong4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/nameOfArtist3"
+                android:orientation="vertical"
+                android:layout_toRightOf="@id/songImage4"
+                android:paddingLeft="10dp"
+                android:layout_marginTop="18dp"
+                android:text="nameOfSong4"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
 
-        <ImageView
-            android:id="@+id/songImage5"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="298dp"
-            android:adjustViewBounds="true"
-            android:scaleType="centerInside"
-            android:src="@drawable/sad_bear" />
-        <TextView
-            android:id="@+id/nameOfSong5"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingLeft="10dp"
-            android:paddingTop="18dp"
-            android:layout_toRightOf="@id/songImage5"
-            android:text="Can't Stop The Feeling"
-            android:textColor="@color/white"
-            android:orientation="vertical"
-            android:textSize="18sp"
-            android:layout_below="@+id/nameOfArtist4"/>
-        <TextView
-            android:id="@+id/nameOfArtist5"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingLeft="20dp"
-            android:text="Justin Timberlake"
-            android:layout_toRightOf="@id/songImage5"
-            android:textColor="@color/white"
-            android:textSize="15sp"
-            android:orientation="vertical"
-            android:layout_below="@+id/nameOfSong5" />
+            <TextView
+                android:id="@+id/duration4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/duration3"
+                android:layout_marginTop="38dp"
+                android:orientation="vertical"
+                android:layout_marginLeft="320dp"
+                android:text="4:20"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
 
-
-
-        <ImageView
-            android:id="@+id/songImage6"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="360dp"
-            android:adjustViewBounds="true"
-            android:scaleType="centerInside"
-            android:src="@drawable/sad_bear" />
-        <TextView
-            android:id="@+id/nameOfSong6"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingLeft="10dp"
-            android:layout_toRightOf="@id/songImage6"
-            android:paddingTop="18dp"
-            android:text="Can't Stop The Feeling"
-            android:textColor="@color/white"
-            android:orientation="vertical"
-            android:textSize="18sp"
-            android:layout_below="@+id/nameOfArtist5"/>
-        <TextView
-            android:id="@+id/nameOfArtist6"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingLeft="20dp"
-            android:layout_toRightOf="@id/songImage6"
-            android:text="Justin Timberlake"
-            android:textColor="@color/white"
-            android:textSize="15sp"
-            android:orientation="vertical"
-            android:layout_below="@+id/nameOfSong6" />
+            <TextView
+                android:id="@+id/nameOfArtist4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="20dp"
+                android:text="nameOfArtist4"
+                android:layout_toRightOf="@id/songImage4"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                android:orientation="vertical"
+                android:layout_below="@+id/nameOfSong4" />
 
 
+            <TextView
+                android:id="@+id/nameOfSong5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:layout_marginTop="18dp"
+                android:layout_toRightOf="@id/songImage5"
+                android:text="nameOfSong5"
+                android:textColor="@color/white"
+                android:orientation="vertical"
+                android:textSize="18sp"
+                android:layout_below="@+id/nameOfArtist4"/>
 
-        <ImageView
-            android:id="@+id/songImage7"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="423dp"
-            android:adjustViewBounds="true"
-            android:scaleType="centerInside"
-            android:src="@drawable/sad_bear" />
-        <TextView
-            android:id="@+id/nameOfSong7"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingLeft="10dp"
-            android:paddingTop="18dp"
-            android:layout_toRightOf="@id/songImage7"
-            android:text="Can't Stop The Feeling"
-            android:textColor="@color/white"
-            android:orientation="vertical"
-            android:textSize="18sp"
-            android:layout_below="@+id/nameOfArtist6"/>
-        <TextView
-            android:id="@+id/nameOfArtist7"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingLeft="20dp"
-            android:layout_toRightOf="@id/songImage7"
-            android:text="Justin Timberlake"
-            android:textColor="@color/white"
-            android:textSize="15sp"
-            android:orientation="vertical"
-            android:layout_below="@+id/nameOfSong7" />
+            <TextView
+                android:id="@+id/duration5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/duration4"
+                android:layout_marginTop="38dp"
+                android:orientation="vertical"
+                android:layout_marginLeft="320dp"
+                android:text="4:20"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
 
-
-
-        <ImageView
-            android:id="@+id/songImage8"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="486dp"
-            android:adjustViewBounds="true"
-            android:scaleType="centerInside"
-            android:src="@drawable/sad_bear" />
-        <TextView
-            android:id="@+id/nameOfSong8"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingLeft="10dp"
-            android:layout_toRightOf="@id/songImage8"
-            android:paddingTop="18dp"
-            android:text="Can't Stop The Feeling"
-            android:textColor="@color/white"
-            android:orientation="vertical"
-            android:textSize="18sp"
-            android:layout_below="@+id/nameOfArtist7"/>
-        <TextView
-            android:id="@+id/nameOfArtist8"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/songImage8"
-            android:paddingLeft="20dp"
-            android:text="Justin Timberlake"
-            android:textColor="@color/white"
-            android:textSize="15sp"
-            android:orientation="vertical"
-            android:layout_below="@+id/nameOfSong8" />
+            <TextView
+                android:id="@+id/nameOfArtist5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="20dp"
+                android:text="nameOfArtist5"
+                android:layout_toRightOf="@id/songImage5"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                android:orientation="vertical"
+                android:layout_below="@+id/nameOfSong5" />
 
 
+            <TextView
+                android:id="@+id/nameOfSong6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:layout_toRightOf="@id/songImage6"
+                android:layout_marginTop="18dp"
+                android:text="nameOfSong6"
+                android:textColor="@color/white"
+                android:orientation="vertical"
+                android:textSize="18sp"
+                android:layout_below="@+id/nameOfArtist5"/>
 
-        <ImageView
-            android:id="@+id/songImage9"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="547dp"
-            android:adjustViewBounds="true"
-            android:scaleType="centerInside"
-            android:src="@drawable/sad_bear" />
+            <TextView
+                android:id="@+id/duration6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/duration5"
+                android:layout_marginTop="38dp"
+                android:orientation="vertical"
+                android:layout_marginLeft="320dp"
+                android:text="4:20"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
 
-        <TextView
-            android:id="@+id/nameOfSong9"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/nameOfArtist8"
-            android:layout_toRightOf="@id/songImage9"
-            android:orientation="vertical"
-            android:paddingLeft="10dp"
-            android:paddingTop="18dp"
-            android:text="Can't Stop The Feeling"
-            android:textColor="@color/white"
-            android:textSize="18sp" />
-        <TextView
-            android:id="@+id/nameOfArtist9"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/songImage9"
-            android:paddingLeft="20dp"
-            android:text="Justin Timberlake"
-            android:textColor="@color/white"
-            android:textSize="15sp"
-            android:orientation="vertical"
-            android:layout_below="@+id/nameOfSong9" />
-
-
-        <ImageView
-            android:id="@+id/songImage10"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="608dp"
-            android:adjustViewBounds="true"
-            android:scaleType="centerInside"
-            android:src="@drawable/sad_bear" />
-        <TextView
-            android:id="@+id/nameOfSong10"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingLeft="10dp"
-            android:layout_toRightOf="@id/songImage10"
-            android:paddingTop="18dp"
-            android:text="Can't Stop The Feeling"
-            android:textColor="@color/white"
-            android:orientation="vertical"
-            android:textSize="18sp"
-            android:layout_below="@+id/nameOfArtist9"/>
-        <TextView
-            android:id="@+id/nameOfArtist10"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingLeft="20dp"
-            android:layout_toRightOf="@id/songImage10"
-            android:text="Justin Timberlake"
-            android:textColor="@color/white"
-            android:textSize="15sp"
-            android:orientation="vertical"
-            android:layout_below="@+id/nameOfSong10" />
+            <TextView
+                android:id="@+id/nameOfArtist6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="20dp"
+                android:layout_toRightOf="@id/songImage6"
+                android:text="nameOfArtist6"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                android:orientation="vertical"
+                android:layout_below="@+id/nameOfSong6" />
 
 
-    </RelativeLayout>
+            <TextView
+                android:id="@+id/nameOfSong7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:layout_marginTop="18dp"
+                android:layout_toRightOf="@id/songImage7"
+                android:text="nameOfSong7"
+                android:textColor="@color/white"
+                android:orientation="vertical"
+                android:textSize="18sp"
+                android:layout_below="@+id/nameOfArtist6"/>
+
+            <TextView
+                android:id="@+id/duration7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/duration6"
+                android:layout_marginTop="38dp"
+                android:orientation="vertical"
+                android:layout_marginLeft="320dp"
+                android:text="4:20"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/nameOfArtist7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="20dp"
+                android:layout_toRightOf="@id/songImage7"
+                android:text="nameOfArtist7"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                android:orientation="vertical"
+                android:layout_below="@+id/nameOfSong7" />
+
+
+            <TextView
+                android:id="@+id/nameOfSong8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:layout_toRightOf="@id/songImage8"
+                android:layout_marginTop="18dp"
+                android:text="nameOfSong8"
+                android:textColor="@color/white"
+                android:orientation="vertical"
+                android:textSize="18sp"
+                android:layout_below="@+id/nameOfArtist7"/>
+
+            <TextView
+                android:id="@+id/duration8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/duration7"
+                android:layout_marginTop="38dp"
+                android:orientation="vertical"
+                android:layout_marginLeft="320dp"
+                android:text="4:20"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/nameOfArtist8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/songImage8"
+                android:paddingLeft="20dp"
+                android:text="nameOfArtist8"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                android:orientation="vertical"
+                android:layout_below="@+id/nameOfSong8" />
+
+
+            <TextView
+                android:id="@+id/nameOfSong9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/nameOfArtist8"
+                android:layout_toRightOf="@id/songImage9"
+                android:orientation="vertical"
+                android:paddingLeft="10dp"
+                android:layout_marginTop="18dp"
+                android:text="nameOfSong9"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/duration9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/duration8"
+                android:layout_marginTop="38dp"
+                android:orientation="vertical"
+                android:layout_marginLeft="320dp"
+                android:text="4:20"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/nameOfArtist9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/songImage9"
+                android:paddingLeft="20dp"
+                android:text="nameOfArtist9"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                android:orientation="vertical"
+                android:layout_below="@+id/nameOfSong9" />
+
+
+            <TextView
+                android:id="@+id/nameOfSong10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/nameOfArtist9"
+                android:layout_marginTop="18dp"
+                android:layout_toRightOf="@id/songImage10"
+                android:orientation="vertical"
+                android:paddingLeft="10dp"
+                android:text="nameOfSong10"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/duration10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/duration9"
+                android:layout_marginTop="38dp"
+                android:orientation="vertical"
+                android:layout_marginLeft="320dp"
+                android:text="4:20"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/nameOfArtist10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/nameOfSong10"
+                android:layout_toRightOf="@id/songImage10"
+                android:orientation="vertical"
+                android:paddingLeft="20dp"
+                android:text="nameOfArtist10"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/bottomBar"
@@ -375,7 +574,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp">
+            android:layout_marginTop="10dp"
+            >
 
 
             <ImageView
