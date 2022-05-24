@@ -8,6 +8,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -16,6 +17,8 @@ import com.google.firebase.auth.FirebaseAuth;
 public class Help extends AppCompatActivity implements View.OnClickListener {
     private ImageView HomeImg,CamImg,LibImg;
     private TextView HomeText,CamText,LibText;
+    private Button contactUs;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,7 +29,9 @@ public class Help extends AppCompatActivity implements View.OnClickListener {
         HomeText=(TextView) findViewById(R.id.HomepageDirect);
         CamText=(TextView) findViewById(R.id.OpenCameraDirect);
         LibText=(TextView) findViewById(R.id.LibraryDirect);
+        contactUs=(Button) findViewById(R.id.ContactUs);
 
+        contactUs.setOnClickListener(this);
         HomeImg.setOnClickListener(this);
         CamImg.setOnClickListener(this);
         LibImg.setOnClickListener(this);
@@ -68,6 +73,8 @@ public class Help extends AppCompatActivity implements View.OnClickListener {
                 break;
             case R.id.LibraryDirect:
                 break;
+            case R.id.ContactUs:
+                startActivity(new Intent(this, ContactUs.class));
 
         }
     }

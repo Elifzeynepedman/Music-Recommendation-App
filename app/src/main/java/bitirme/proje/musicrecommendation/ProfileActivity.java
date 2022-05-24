@@ -33,7 +33,11 @@ import java.util.Random;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class ProfileActivity extends AppCompatActivity implements View.OnClickListener {
+
+//UPDATE FINAL REPORT
+
+public class
+ProfileActivity extends AppCompatActivity implements View.OnClickListener {
 
 
     private ImageView HomeImg,CamImg,LibImg,imagePlayPause;
@@ -143,6 +147,8 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
                     FirebaseAuth.getInstance().signOut();
                     startActivity(new Intent(ProfileActivity.this,MainActivity.class));
                     return true;
+                case R.id.help:
+                    startActivity(new Intent(ProfileActivity.this,Help.class));
                 default:
                     return super.onOptionsItemSelected(item);
             }

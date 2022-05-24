@@ -4,10 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Help"
-    android:background="#1F2833"
-    >
-
+    tools:context=".ContactUs"
+    android:background="#1F2833">
 
     <TextView
         android:id="@+id/LibraryDirect"
@@ -92,28 +90,97 @@
         app:layout_constraintVertical_bias="0.996"
         app:srcCompat="@drawable/musiclibrary" />
 
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="236dp"
-        android:layout_height="192dp"
-        app:layout_constraintBottom_toTopOf="@+id/CamImg"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+    <TextView
+        android:id="@+id/ToEmail"
+        android:layout_width="84dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="35dp"
+        android:layout_weight="1"
+        android:background="@drawable/contactus_bg"
+        android:gravity="center"
+        android:text="To"
+        android:textColor="#ffff"
+        android:textSize="18dp"
+        app:layout_constraintBottom_toTopOf="@+id/HomeImg"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/avatars" />
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/toEdit"
+        android:layout_width="259dp"
+        android:layout_height="42dp"
+        android:background="@drawable/contactus_bg"
+        android:gravity="center"
+        android:text="eloedoel@gmail.com"
+        android:textColor="#ffff"
+        android:textColorHint="#ffff"
+        android:textSize="18dp"
+        app:layout_constraintBottom_toBottomOf="@+id/ToEmail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.555"
+        app:layout_constraintStart_toEndOf="@+id/ToEmail"
+        app:layout_constraintTop_toTopOf="@+id/ToEmail" />
+
+    <TextView
+        android:id="@+id/subject"
+        android:layout_width="84dp"
+        android:layout_height="42dp"
+        android:layout_weight="1"
+        android:background="@drawable/contactus_bg"
+        android:gravity="center"
+        android:text="Subject"
+        android:textColor="#ffff"
+        android:textSize="18dp"
+        app:layout_constraintBottom_toTopOf="@+id/HomeImg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.048"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ToEmail"
+        app:layout_constraintVertical_bias="0.067" />
+
+    <EditText
+        android:id="@+id/SubjectEdit"
+        android:layout_width="264dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="21dp"
+        android:background="@drawable/contactus_bg"
+        android:gravity="center"
+        android:textColor="#ffff"
+        android:textSize="18dp"
+        app:layout_constraintBottom_toTopOf="@+id/LibImg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/subject"
+        app:layout_constraintTop_toBottomOf="@+id/toEdit"
+        app:layout_constraintVertical_bias="0.067" />
+
+    <EditText
+        android:id="@+id/sendMessage"
+        android:layout_width="372dp"
+        android:layout_height="300dp"
+        android:layout_marginStart="16dp"
+        android:gravity="center"
+        android:hint="Message"
+        android:textColor="#ffff"
+        android:textColorHint="#ffff"
+        android:textSize="18dp"
+        app:layout_constraintBottom_toTopOf="@+id/CamImg"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/SubjectEdit"
+        app:layout_constraintVertical_bias="0.262" />
 
     <Button
-        android:id="@+id/ContactUs"
+        android:id="@+id/SendEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Contact Us"
+        android:text="Send"
+        android:backgroundTint="#66FCF1"
         android:textColor="#ffff"
         app:layout_constraintBottom_toTopOf="@+id/CamImg"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3"
-        app:layout_constraintVertical_bias="0.206" />
-
+        app:layout_constraintTop_toBottomOf="@+id/sendMessage"
+        app:layout_constraintVertical_bias="0.35" />
 </androidx.constraintlayout.widget.ConstraintLayout>

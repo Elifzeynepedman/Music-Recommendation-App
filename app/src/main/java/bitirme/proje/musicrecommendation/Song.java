@@ -3,6 +3,9 @@ package bitirme.proje.musicrecommendation;
 import android.media.MediaPlayer;
 import android.util.Log;
 
+
+
+//UPDATE FINAL REPORT
 public class Song {
 
     String[] songNames = new String[30];
