@@ -5,6 +5,7 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.Menu;
@@ -25,6 +26,9 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.chaquo.python.PyObject;
+import com.chaquo.python.Python;
+import com.chaquo.python.android.AndroidPlatform;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class CameraFragment extends AppCompatActivity {
@@ -34,6 +38,10 @@ public class CameraFragment extends AppCompatActivity {
     Button cameraBtn,useImage;
     TextView goBack;
     ImageView cameraImg;
+
+    Python py = Python.getInstance();
+    final PyObject pyobj = py.getModule("yuz_tanima"); //here we will give name of our python file
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -63,6 +71,14 @@ public class CameraFragment extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.camera_activity);
+
+
+        if(!Python.isStarted())
+            Python.start(new AndroidPlatform(this));
+
+
+
+
 
         cameraBtn=(Button)findViewById(R.id.cameraBtn);
         goBack=(TextView)findViewById(R.id.GoBack);
@@ -135,6 +151,16 @@ public class CameraFragment extends AppCompatActivity {
         if (requestCode == CAMERA_REQUEST_CODE) {
             Bitmap bitmap = (Bitmap) data.getExtras().get("data");
             cameraImg.setImageBitmap(bitmap);
+
+            PyObject obj = null;
+
+            //obj = pyobj.callAttr()
+
+
+
+
+
+
 
         }
     }

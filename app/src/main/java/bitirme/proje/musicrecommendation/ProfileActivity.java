@@ -14,6 +14,8 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Adapter;
+import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.TextView;
@@ -56,6 +58,8 @@ ProfileActivity extends AppCompatActivity implements View.OnClickListener {
     DatabaseReference databaseReference;
     private Song song = new Song();
     private ImageView nextBtn, prevBtn;
+    int songNo = 0;
+    int newSong = 0;
     //---------------
 
 
@@ -87,6 +91,16 @@ ProfileActivity extends AppCompatActivity implements View.OnClickListener {
         songArtist = (TextView) findViewById(R.id.songArtist);
         nextBtn = (ImageView) findViewById(R.id.nextBtn);
         prevBtn = (ImageView) findViewById(R.id.previousBtn);
+
+
+        Bundle extras = getIntent().getExtras();
+        if (extras != null) {
+            songNo = extras.getInt("key");  //receive info from playlist
+            setSongInformation(songNo);
+            play_song(false,false);
+            imagePlayPause.setImageResource(R.drawable.ic_pause);
+        }
+
 
         //---------------
 
@@ -158,7 +172,7 @@ ProfileActivity extends AppCompatActivity implements View.OnClickListener {
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.HomeImg:
-                startActivity(new Intent(this, ProfileActivity.class));
+                //startActivity(new Intent(this, ProfileActivity.class));
                 break;
             case R.id.CamImg:
                 startActivity(new Intent(this, CameraFragment.class));
@@ -184,45 +198,29 @@ ProfileActivity extends AppCompatActivity implements View.OnClickListener {
     };
 
 
-    String songDuration;
 
-    public String milliSecondsToTimer(long milliseconds){               //Converts milliseconds into mm:ss format
-        String finalTimerString = "";
-        String secondsString = "";
-
-        int minutes = (int)(milliseconds % (1000*60*60)) / (1000*60);
-        int seconds = (int) ((milliseconds % (1000*60*60)) % (1000*60) / 1000);
-        if(seconds < 10) {
-            secondsString = "0" + seconds;
-        }else{
-            secondsString = "" + seconds;
-        }
-        finalTimerString = finalTimerString + minutes + ":" + secondsString;
-        songDuration = finalTimerString;
-        return finalTimerString;
+    public void setSongNo(int songNumber){
+        songNo = songNumber;
+    }
+    public int getSongNo(){
+        return songNo;
     }
 
-    public String getSongduration(){
-        return songDuration;
-    }
-
-    int songNo = 3;
     public void play_song(boolean prev, boolean next){
         try {
-
-            Random songRandomizer = new Random();
-            //int randomNumber = songRandomizer.nextInt(5);
             if(prev){
-                //randomNumber--;
-                songNo--;
+                newSong = getSongNo();
+                newSong--;
+                setSongNo(newSong);
             }else if(next){
-                //randomNumber++;
-                songNo++;
+                newSong = getSongNo();
+                newSong++;
+                setSongNo(newSong);
             }
-            setSongInformation(songNo);
+            setSongInformation(getSongNo());
 
 
-            String chosenSong = song.getSongURL(songNo);
+            String chosenSong = song.getSongURL(getSongNo());   //0 - 29
             mediaPlayer.setDataSource(chosenSong);
             mediaPlayer.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
                 @Override
@@ -254,8 +252,34 @@ ProfileActivity extends AppCompatActivity implements View.OnClickListener {
         Picasso.get().load(songPath).into(songArt);      //displays the song art
         songName.setText(song.getSongNames(i));         //displays the song name
         songArtist.setText(song.getSongArtist(i));      //displays the song artist
-    }
+        /*
+        textCurrentTime.setText("00:00");      // Displays Current Duration
+        long totalDuration = mediaPlayer.getDuration();
+        textTotalDuration.setText(""+ milliSecondsToTimer(totalDuration));      // Displays Total Duratio
+        */
 
+
+
+    }
+    //BURAYA KADAR  AAAAAAA    dsGERİ ALABİLİRSİN AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+
+    //String songDuration;
+
+    public String milliSecondsToTimer(long milliseconds){               //Converts milliseconds into mm:ss format
+        String finalTimerString = "";
+        String secondsString = "";
+
+        int minutes = (int)(milliseconds % (1000*60*60)) / (1000*60);
+        int seconds = (int) ((milliseconds % (1000*60*60)) % (1000*60) / 1000);
+        if(seconds < 10) {
+            secondsString = "0" + seconds;
+        }else{
+            secondsString = "" + seconds;
+        }
+        finalTimerString = finalTimerString + minutes + ":" + secondsString;
+        //songDuration = finalTimerString;
+        return finalTimerString;
+    }
 
 
 }

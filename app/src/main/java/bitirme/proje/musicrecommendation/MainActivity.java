@@ -124,7 +124,7 @@ public class MainActivity extends AppCompatActivity implements  View.OnClickList
                  if(task.isSuccessful()){
                      FirebaseUser user=FirebaseAuth.getInstance().getCurrentUser();
                      if(user.isEmailVerified()){
-                         startActivity(new Intent(MainActivity.this,ProfileActivity.class));
+                         startActivity(new Intent(MainActivity.this,Library.class));
                          progressBar.setVisibility(View.GONE);
 
                      }

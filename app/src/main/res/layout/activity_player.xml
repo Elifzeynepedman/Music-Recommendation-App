@@ -30,7 +30,7 @@
             android:layout_marginStart="-2dp"
             android:layout_marginTop="57dp"
             android:paddingStart="30dp"
-            android:src="@drawable/dusktilldawn" />
+            android:src="@drawable/current_song_not_found" />
 
         <TextView
             android:id="@+id/songName"
@@ -41,7 +41,7 @@
             android:layout_marginEnd="2dp"
             android:layout_marginBottom="223dp"
             android:paddingStart="15dp"
-            android:text="Dusk Till Dawn"
+            android:text="notFound"
             android:textColor="#ffff"
             android:textSize="30dp" />
 
@@ -55,7 +55,7 @@
             android:layout_marginBottom="190dp"
             android:alpha=".8"
             android:paddingStart="15dp"
-            android:text="Zayn Malik"
+            android:text="notFound"
             android:textColor="#ffff"
             android:textSize="20dp" />
     </RelativeLayout>
@@ -94,7 +94,7 @@
                 android:layout_toStartOf="@+id/endTime"
                 android:layout_toEndOf="@+id/startTime"
                 android:max="100"
-                android:progress="50"
+                android:progress="0"
                 android:progressDrawable="@drawable/custom_seekbar"
                 android:thumb="@drawable/custom_thumb"></SeekBar>
             <TextView

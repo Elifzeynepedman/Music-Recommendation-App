@@ -246,5 +246,29 @@ public class Song {
             return "Neutral Playlist";
         return "what";
     }
+
+    public int searchForSong(CharSequence search){
+        boolean count = false;
+        int songIndex = 0;
+        for(int i = 0; i < songNames.length; i++)
+        {
+            if(songNames[i].equals(search))
+            {
+                count = true;
+                songIndex = i;
+                break;
+            }
+        }
+        if(count)
+        {
+            return songIndex;
+        }
+        else
+        {
+            Log.d("myTag", "Could not get the index of the song.");
+        }
+        return 0;
+    }
+
 }
 

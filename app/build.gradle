@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'com.google.gms.google-services'
+    id 'com.chaquo.python'
 }
 
 android {
@@ -9,12 +10,40 @@ android {
 
     defaultConfig {
         applicationId "bitirme.proje.musicrecommendation"
+
+        python{
+            pip{
+                install "numpy"
+                install "opencv-contrib-python-headless"
+                install "pillow"
+            }
+        }
+
+        //give source folder to python
+        sourceSets{
+            main{
+                python{
+                    srcDirs = ["src/main/python"]
+                }
+            }
+        }
+
         minSdkVersion 24
         targetSdkVersion 31
         versionCode 1
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        ndk{
+            abiFilters "armeabi-v7a", "x86"
+        }
+
+        //path to python.exe
+        python{
+            buildPython "C:\\Users\\Dell\\AppData\\Local\\Programs\\Python\\Python36-32\\python.exe"
+        }
+
     }
 
     buildTypes {

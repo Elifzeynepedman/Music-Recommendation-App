@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.util.Patterns;
 import android.view.KeyEvent;
 import android.view.Menu;
@@ -116,36 +117,52 @@ public class Library extends AppCompatActivity implements View.OnClickListener {
                 startActivity(new Intent(Library.this, Library.class));
                 break;
             case R.id.happyPlaylistImage:
-                playlist.setPlaylist(2);
-                startActivity(new Intent(Library.this, Playlist.class));
+                String moodH1="happy";
+                Intent iH1 = new Intent(Library.this, Playlist.class);
+                iH1.putExtra("key", moodH1);
+                startActivity(iH1);
                 break;
             case R.id.happyPlaylist:
-                playlist.setPlaylist(2);
-                startActivity(new Intent(Library.this, Playlist.class));
+                String moodH2="happy";
+                Intent iH2 = new Intent(Library.this, Playlist.class);
+                iH2.putExtra("key", moodH2);
+                startActivity(iH2);
                 break;
             case R.id.sadPlaylistImage:
-                playlist.setPlaylist(3);
-                startActivity(new Intent(Library.this, Playlist.class));
+                String moodS1="sad";
+                Intent iS1 = new Intent(Library.this, Playlist.class);
+                iS1.putExtra("key", moodS1);
+                startActivity(iS1);
                 break;
             case R.id.sadPlaylist:
-                playlist.setPlaylist(3);
-                startActivity(new Intent(Library.this, Playlist.class));
+                String moodS2="sad";
+                Intent iS2 = new Intent(Library.this, Playlist.class);
+                iS2.putExtra("key", moodS2);
+                startActivity(iS2);
                 break;
             case R.id.angryPlaylistImage:
-                startActivity(new Intent(Library.this, Playlist.class));
-                playlist.setPlaylist(1);
+                String moodA1="angry";
+                Intent iA1 = new Intent(Library.this, Playlist.class);
+                iA1.putExtra("key", moodA1);
+                startActivity(iA1);
                 break;
             case R.id.angryPlaylist:
-                playlist.setPlaylist(1);
-                startActivity(new Intent(Library.this, Playlist.class));
+                String moodA2="angry";
+                Intent iA2 = new Intent(Library.this, Playlist.class);
+                iA2.putExtra("key", moodA2);
+                startActivity(iA2);
                 break;
             case R.id.neutralPlaylistImage:
-                playlist.setPlaylist(4);
-                startActivity(new Intent(Library.this, Playlist.class));
+                String moodN1="neutral";
+                Intent iN1 = new Intent(Library.this, Playlist.class);
+                iN1.putExtra("key", moodN1);
+                startActivity(iN1);
                 break;
             case R.id.neutralPlaylist:
-                playlist.setPlaylist(4);
-                startActivity(new Intent(Library.this, Playlist.class));
+                String moodN2="neutral";
+                Intent iN2 = new Intent(Library.this, Playlist.class);
+                iN2.putExtra("key", moodN2);
+                startActivity(iN2);
                 break;
         }
     }
