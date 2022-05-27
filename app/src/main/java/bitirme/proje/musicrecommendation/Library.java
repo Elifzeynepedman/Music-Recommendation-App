@@ -71,10 +71,13 @@ public class Library extends AppCompatActivity implements View.OnClickListener {
         angryPlaylist.setOnClickListener(this);
         neutralPlaylist.setOnClickListener(this);
 
+/*
+        if (!OpenCVLoader.initDebug())
+            Log.e("OpenCV", "Unable to load OpenCV!");
+        else
+            Log.d("OpenCV", "OpenCV loaded Successfully!");
 
-
-
-
+*/
 
 
 

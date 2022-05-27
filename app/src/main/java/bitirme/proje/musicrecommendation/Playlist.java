@@ -182,39 +182,29 @@ public class Playlist extends AppCompatActivity implements View.OnClickListener 
 
     public void setPlaylist(String mood){
         if(mood.equals("angry")){          //angry (0-9)
+            //setting the playlist name
             playlistName.setText("Angry Playlist");
             //setting the song images
             String songPath = song.getSongImage(0);
             Picasso.get().load(songPath).into(songImage1);
-
-            //songNo1 = 1;
             songPath = song.getSongImage(1);
             Picasso.get().load(songPath).into(songImage2);
-
             songPath = song.getSongImage(2);
             Picasso.get().load(songPath).into(songImage3);
-
             songPath = song.getSongImage(3);
             Picasso.get().load(songPath).into(songImage4);
-
             songPath = song.getSongImage(4);
             Picasso.get().load(songPath).into(songImage5);
-
             songPath = song.getSongImage(5);
             Picasso.get().load(songPath).into(songImage6);
-
             songPath = song.getSongImage(6);
             Picasso.get().load(songPath).into(songImage7);
-
             songPath = song.getSongImage(7);
             Picasso.get().load(songPath).into(songImage8);
-
             songPath = song.getSongImage(8);
             Picasso.get().load(songPath).into(songImage9);
-
             songPath = song.getSongImage(9);
             Picasso.get().load(songPath).into(songImage10);
-
             //setting the song names
             nameOfSong1.setText(song.getSongNames(0));
             nameOfSong2.setText(song.getSongNames(1));
@@ -237,7 +227,19 @@ public class Playlist extends AppCompatActivity implements View.OnClickListener 
             nameOfArtist8.setText(song.getSongArtist(7));
             nameOfArtist9.setText(song.getSongArtist(8));
             nameOfArtist10.setText(song.getSongArtist(9));
+            //setting the song durations
+            duration1.setText(song.getSongDuration(0));
+            duration2.setText(song.getSongDuration(1));
+            duration3.setText(song.getSongDuration(2));
+            duration4.setText(song.getSongDuration(3));
+            duration5.setText(song.getSongDuration(4));
+            duration6.setText(song.getSongDuration(5));
+            duration7.setText(song.getSongDuration(6));
+            duration8.setText(song.getSongDuration(7));
+            duration9.setText(song.getSongDuration(8));
+            duration10.setText(song.getSongDuration(9));
         }else if(mood.equals("happy")){    //happy (10-19)
+            //setting the playlist name
             playlistName.setText("Happy Playlist");
             //setting the song images
             String songPath = song.getSongImage(10);
@@ -282,7 +284,19 @@ public class Playlist extends AppCompatActivity implements View.OnClickListener 
             nameOfArtist8.setText(song.getSongArtist(17));
             nameOfArtist9.setText(song.getSongArtist(18));
             nameOfArtist10.setText(song.getSongArtist(19));
+            //setting the song durations
+            duration1.setText(song.getSongDuration(10));
+            duration2.setText(song.getSongDuration(11));
+            duration3.setText(song.getSongDuration(12));
+            duration4.setText(song.getSongDuration(13));
+            duration5.setText(song.getSongDuration(14));
+            duration6.setText(song.getSongDuration(15));
+            duration7.setText(song.getSongDuration(16));
+            duration8.setText(song.getSongDuration(17));
+            duration9.setText(song.getSongDuration(18));
+            duration10.setText(song.getSongDuration(19));
         }else if(mood.equals("sad")){    //sad (20-29)
+            //setting the playlist name
             playlistName.setText("Sad Playlist");
             //setting the song images
             String songPath = song.getSongImage(20);
@@ -327,7 +341,19 @@ public class Playlist extends AppCompatActivity implements View.OnClickListener 
             nameOfArtist8.setText(song.getSongArtist(27));
             nameOfArtist9.setText(song.getSongArtist(28));
             nameOfArtist10.setText(song.getSongArtist(29));
-        }else if(mood.equals("neutral")){    //neutral
+            //setting the song durations
+            duration1.setText(song.getSongDuration(20));
+            duration2.setText(song.getSongDuration(21));
+            duration3.setText(song.getSongDuration(22));
+            duration4.setText(song.getSongDuration(23));
+            duration5.setText(song.getSongDuration(24));
+            duration6.setText(song.getSongDuration(25));
+            duration7.setText(song.getSongDuration(26));
+            duration8.setText(song.getSongDuration(27));
+            duration9.setText(song.getSongDuration(28));
+            duration10.setText(song.getSongDuration(29));
+        }else if(mood.equals("neutral")){
+            //setting the playlist name
             playlistName.setText("Neutral Playlist");
             //setting the song images
             String songPath = song.getSongImage(10);
@@ -372,6 +398,17 @@ public class Playlist extends AppCompatActivity implements View.OnClickListener 
             nameOfArtist8.setText(song.getSongArtist(8));
             nameOfArtist9.setText(song.getSongArtist(28));
             nameOfArtist10.setText(song.getSongArtist(11));
+            //setting the song durations
+            duration1.setText(song.getSongDuration(10));
+            duration2.setText(song.getSongDuration(0));
+            duration3.setText(song.getSongDuration(25));
+            duration4.setText(song.getSongDuration(12));
+            duration5.setText(song.getSongDuration(21));
+            duration6.setText(song.getSongDuration(5));
+            duration7.setText(song.getSongDuration(13));
+            duration8.setText(song.getSongDuration(8));
+            duration9.setText(song.getSongDuration(28));
+            duration10.setText(song.getSongDuration(11));
         }
     }
 /*

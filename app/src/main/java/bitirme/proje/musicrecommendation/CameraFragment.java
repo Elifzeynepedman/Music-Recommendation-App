@@ -1,5 +1,9 @@
 package bitirme.proje.musicrecommendation;
-
+/*
+import static org.bytedeco.javacpp.opencv_highgui.imread;
+import static org.bytedeco.javacpp.opencv_highgui.imwrite;
+import static org.bytedeco.javacpp.opencv_imgproc.GaussianBlur;
+*/
 import android.Manifest;
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -16,6 +20,20 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+//import org.bytedeco.opencv;
+//import org.bytedeco.javacpp.opencv_core;
+
+/*
+import org.bytedeco.opencv.opencv_core.*;
+import org.bytedeco.opencv.opencv_imgproc.*;
+import static org.bytedeco.opencv.global.opencv_core.*;
+import static org.bytedeco.opencv.global.opencv_imgproc.*;
+import static org.bytedeco.opencv.global.opencv_imgcodecs.*;
+import static org.bytedeco.opencv.global.opencv_core.BORDER_DEFAULT;
+import static org.bytedeco.opencv.global.opencv_imgcodecs.imread;
+import static org.bytedeco.opencv.global.opencv_imgproc.Laplacian;
+*/
+
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -50,6 +68,9 @@ public class CameraFragment extends AppCompatActivity {
         inflater.inflate(R.menu.menu,menu);
         return true;
     }
+
+
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -170,6 +191,15 @@ public class CameraFragment extends AppCompatActivity {
 
 
     }
+/*
+    public static void smooth(String filename) {
+        opencv_core.Mat image = imread(filename);
+        if (image != null) {
+            GaussianBlur(image, image, new opencv_core.Size(3, 3), 0);
+            imwrite(filename, image);
+        }
+    }
+    */
 
 
 }

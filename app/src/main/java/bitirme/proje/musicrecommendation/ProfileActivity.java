@@ -209,13 +209,23 @@ ProfileActivity extends AppCompatActivity implements View.OnClickListener {
     public void play_song(boolean prev, boolean next){
         try {
             if(prev){
-                newSong = getSongNo();
-                newSong--;
-                setSongNo(newSong);
+                if(getSongNo() == 0 || getSongNo() == 10 || getSongNo() ==20){
+                    setSongNo(getSongNo() + 9);
+                }else{
+                    //bu kısım else in içine giricek
+                    newSong = getSongNo();
+                    newSong--;
+                    setSongNo(newSong);
+                }
             }else if(next){
-                newSong = getSongNo();
-                newSong++;
-                setSongNo(newSong);
+                if(getSongNo() == 9 || getSongNo() == 19 || getSongNo() == 29){
+                    setSongNo(getSongNo() - 9);
+                }else{
+                    //bu kısım else in içine giricek
+                    newSong = getSongNo();
+                    newSong++;
+                    setSongNo(newSong);
+                }
             }
             setSongInformation(getSongNo());
 
@@ -253,7 +263,6 @@ ProfileActivity extends AppCompatActivity implements View.OnClickListener {
         songName.setText(song.getSongNames(i));         //displays the song name
         songArtist.setText(song.getSongArtist(i));      //displays the song artist
         /*
-        textCurrentTime.setText("00:00");      // Displays Current Duration
         long totalDuration = mediaPlayer.getDuration();
         textTotalDuration.setText(""+ milliSecondsToTimer(totalDuration));      // Displays Total Duratio
         */
@@ -263,7 +272,15 @@ ProfileActivity extends AppCompatActivity implements View.OnClickListener {
     }
     //BURAYA KADAR  AAAAAAA    dsGERİ ALABİLİRSİN AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 
-    //String songDuration;
+    public String getSongDuration() {
+        return songDuration;
+    }
+
+    public void setSongDuration(String songDuration) {
+        this.songDuration = songDuration;
+    }
+
+    String songDuration;
 
     public String milliSecondsToTimer(long milliseconds){               //Converts milliseconds into mm:ss format
         String finalTimerString = "";
@@ -277,7 +294,7 @@ ProfileActivity extends AppCompatActivity implements View.OnClickListener {
             secondsString = "" + seconds;
         }
         finalTimerString = finalTimerString + minutes + ":" + secondsString;
-        //songDuration = finalTimerString;
+        setSongDuration(finalTimerString);
         return finalTimerString;
     }
 
