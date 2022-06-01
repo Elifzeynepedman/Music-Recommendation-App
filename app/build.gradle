@@ -57,6 +57,7 @@ android {
 
     buildFeatures{
         viewBinding true
+        mlModelBinding true
     }
 
     compileOptions {
@@ -81,7 +82,7 @@ dependencies {
 
     //implementation "com.quickbirdstudios:opencv:VERSION" bu da olmadı
 
-    /*
+    /* başlarında libs\\ olucak
     implementation files('libs\\javacv.jar')
     implementation files('libs\\artoolkitplus.jar')
     implementation files('libs\\flandmark.jar')
@@ -95,6 +96,16 @@ dependencies {
     */
 
     //implementation group: 'org.bytedeco', name: 'opencv', version: '4.1.0-1.5.1'
+
+
+
+    //import org.bytedeco.javacpp.opencv_core;
+    implementation group: 'org.bytedeco', name: 'javacv', version: '1.5.7'
+    implementation group: 'org.bytedeco.javacpp-presets', name: 'opencv', version: '3.2.0-1.3'
+    //buraya kadar aaaaa okey şu an aaaaaaaaaaaaaaaaaaa
+
+
+
 
     //group olan varken ve /* */ arasındakiler yokken external libraries'de çıkıyo,
     //ama import org.bytedeco.opencv; çalışmıyo
@@ -117,6 +128,8 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
     compileOnly 'com.google.android.wearable:wearable:2.6.0'
+    implementation 'org.tensorflow:tensorflow-lite-support:0.1.0'
+    implementation 'org.tensorflow:tensorflow-lite-metadata:0.1.0'
 
 
 }
